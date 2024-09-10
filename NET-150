@@ -1,0 +1,150 @@
+/// Module 1
+// How do networks work?
+Similar to postal mail service
+
+Packet is a unit of data transfer
+
+DNS converts champlain.edu -> 17.15.129.51
+
+Add headers to data
+
+Send packet to network interface controller (NIC)
+
+Transmits onto network Send to local router, default gateway
+
+Post office sorts letters to get closer to recipient
+
+Router sends packet to the next router IP 1 which network it belongs to, 2 identifies machine
+
+Routing table
+
+// What do you need to run a network
+Network connectivity Devices need an IP address and a Mac address assigned to NIC physical address similar to zipcode Mac address is similar to street address Logical Addressing Routing, post offices Numbers and Names
+
+// Intro to OSI Model
+Open systems interconnection is a network protocol framework that uses 7 Layers When starting creating data on a system and you want to send it you need to go through 7 layers to make sure the information is sent OSI Model can help troubleshoot where the data went The OSI model reads from bottom to top Top to bottom - All people seem to need data processing Bottom to top - Please do not throw sausage pizza away
+
+// Letter Analogy and OSI
+Layer 7 Application layer Network - the data the computer is sending Not common to find issues here
+
+Layer 6 Presentation layer Network: how is the data formatted and presented to the user (encrypted, encoded, zipped)
+
+Layer 5 Session layer Session setup and teardown
+
+Transport layer 4 Network: port number, how data is sent and received Port numbers tell receiver what application the data is for 80 http web traffic 443 https 425 smtp simple mail transfer protocol Email 22 ssh remotely access computers
+
+Layer 3 Network Layer IP addresses if sender and receiver
+
+Layer 2 Data link Defines how the packets get onto the media Is the session available When is it safe to send, is there an active connection
+
+Layer 1 Physical layer Physically sends the data over media Copper wires Fiber optic Radio waves
+
+// OSI
+helps narrow down problems Computer programming - verify many steps yourself Tech vendors refer to OSI layers
+
+// Network Protocols
+Why do we use a layered model? Why isn't there 1 universal model? Wireless vs wired work environments What happens when addressing changes (IPv4 to IPv6)
+
+IPv4 xxx.xxx.xxx.xxx xxx = 0-255
+
+IPv6 yy:yy:yy:yy:yy:yy:yy y = 0-9, A-F
+
+Layered model / Benefits of the OSI Model Helps with complexity Troubleshoot issues more effectively Concentrate at 1 aspect of communication at a time Helps organize Assists in protocol design, a defined interface to the layers above and below Fosters Competition to advance technology Prevents technology or capability changes in one layer from affecting other layers Provides a common language
+
+Data link refers to mac addresses Network is IP
+
+TCP and UDP are protocols TCP is more common
+
+Applications HTTP, FTP, Email, DNS
+
+Packets “Encapsulation”
+
+/// Module 2
+// Types of networks
+There are some common acronyms used to broadly define “types of networks”
+
+PAN personal area
+
+WAN wide area network
+
+MAN metropolitan area network
+
+LAN local area network
+
+Types are not definitions, but do help us describe networks and relevant technologies
+
+And, as technologies evolve, these type definitions also evolve:
+
+Nanoscale Near field Body Personal Near me Local Campus Metro Regional
+
+// Local Area Network
+Two most common, Ethernet Protocol and standards used for “wired” communications
+
+WiFi
+
+Bus topology, coaxial cable daisy chaining devices together
+
+Pros: Simple less cable
+
+Cons: a break anywhere would affect all devices
+
+Ring topology Not commonly used on LANs May be found in factories and other specialized networks
+
+Mesh topology Heavily connected
+
+pros: Very redundant Fault tolerant
+
+Cons: Complicated and lots of cables
+
+Star topology
+Very common in modern LANs
+
+Pros: Cable break effects 1 node Nodes don't have to share a cable
+
+Cons: Lots of cables If central device fails, network is down
+
+Star mesh hybrid topology
+
+Balance of efficiency and redundancy
+
+Star is used to connect user devices
+
+// Packet tracer
+Get in the habit of saving your packet tracer files
+
+There are lots of tips and tricks for packet tracer
+
+control click to keep a wire selected
+
+// MAC address
+How is the destination and source addresses determined within a LAN?
+
+NIC card determines the destination and source address
+
+6 bits or 12 hexadecimal digits
+
+E.g. 33:c4:d8:90:e2:fb
+
+aa:bb:cc:11:22:33
+
+Base 16, 16 digits to represent 1 number
+
+A byte (8 bits in Binary)
+
+Hexadecimal - base 16
+
+1 byte = 2 hex digits
+
+0110 1010 - 1 byte - 2 hex bits
+
+First 6 digits are used to identify the vendor and the last are unique to the device
+
+00-AA-00 intel 00-00-86 Megahertz
+
+MAC address used by NIC to send information from 1 device to the next
+
+3 components to a network address Network ID: first part of IP Address Host ID: second part Mac Address:
+
+IP address is a 32 bit number that is typically displayed like so: xxx.xxx.xxx.xxx Binary IP address: |10000001|10101010|00010010|11011100|
+
+Contains network ID and Host ID Network ID can vary in length Host ID is whatever is leftover Subnet Mask defines how many bits are in the Network ID
