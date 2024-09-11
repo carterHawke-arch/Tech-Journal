@@ -1,0 +1,39 @@
+/// Lab 1-1 Network Connectivity
+
+1 sentence summary:
+
+
+Any commands that you found useful
+
+ipconfig
+Display ip address information
+
+ipconfig /all
+Display more ip information
+
+ping
+Sends packets on a round trip
+
+tracert
+Where are the packets going? How many “hops”
+
+nslookup
+Address of the DNS server
+
+
+Notes:
+
+Top 5 steps to be done in VM
+
+Bridge makes the VM connect to network as a separate device
+
+Physical address = Mac Address
+
+Mac assigned where the device is manufactured when they create the NIC card
+First 6 characters tells the manufacturer other uniquely identifies the NIC
+
+DNS servers, important for naming addresses
+
+Testing connectivity
+ping 8.8.8.8 google
+ping Default Gateway
