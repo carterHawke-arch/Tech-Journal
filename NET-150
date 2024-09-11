@@ -148,3 +148,43 @@ MAC address used by NIC to send information from 1 device to the next
 IP address is a 32 bit number that is typically displayed like so: xxx.xxx.xxx.xxx Binary IP address: |10000001|10101010|00010010|11011100|
 
 Contains network ID and Host ID Network ID can vary in length Host ID is whatever is leftover Subnet Mask defines how many bits are in the Network ID
+
+/// Lab 1-1 Network Connectivity
+
+1 sentence summary:
+
+
+Any commands that you found useful
+
+ipconfig
+Display ip address information
+
+ipconfig /all
+Display more ip information
+
+ping
+Sends packets on a round trip
+
+tracert
+Where are the packets going? How many “hops”
+
+nslookup
+Address of the DNS server
+
+
+Notes:
+
+Top 5 steps to be done in VM
+
+Bridge makes the VM connect to network as a separate device
+
+Physical address = Mac Address
+
+Mac assigned where the device is manufactured when they create the NIC card
+First 6 characters tells the manufacturer other uniquely identifies the NIC
+
+DNS servers, important for naming addresses
+
+Testing connectivity
+ping 8.8.8.8 google
+ping Default Gateway
