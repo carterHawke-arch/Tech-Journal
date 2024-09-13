@@ -1,0 +1,9 @@
+A brief (one sentence) summary describing what you did in the lab.
+Troubleshooted internet connection on VMware windows 10 machine and made sure to be connected to the same internet as my partner
+pinged my partener and google and compared source and destination MAC addresses.
+Any commands or instructions that you found useful and will need to use again in the future.
+tracert for troubleshooting internet connectivity
+restarting the VM could solve internet connectivity.
+
+Any problems you ran into during the lab, and what troubleshooting steps you took to fix them.
+turned internet adapter from bridged, to NAT, back to bridged to refresh internet connectivity
