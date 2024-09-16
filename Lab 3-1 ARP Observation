@@ -1,1 +1,5 @@
-
+A brief (one sentence) summary describing what you did in the lab:
+filtered wireshark to only show ARP requests and replies, looked at the difference between ARP request and replies between local devices address and google's address
+Any commands or instructions that you found useful and will need to use again in the future.
+arp -d clear arp cache on windows
+ip -s -s neigh flush all * clear cache on linux
