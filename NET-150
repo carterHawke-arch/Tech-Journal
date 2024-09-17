@@ -49,6 +49,7 @@ IPv4 xxx.xxx.xxx.xxx xxx = 0-255
 
 IPv6 yy:yy:yy:yy:yy:yy:yy y = 0-9, A-F
 
+
 Layered model / Benefits of the OSI Model Helps with complexity Troubleshoot issues more effectively Concentrate at 1 aspect of communication at a time Helps organize Assists in protocol design, a defined interface to the layers above and below Fosters Competition to advance technology Prevents technology or capability changes in one layer from affecting other layers Provides a common language
 
 Data link refers to mac addresses Network is IP
@@ -188,3 +189,64 @@ DNS servers, important for naming addresses
 Testing connectivity
 ping 8.8.8.8 google
 ping Default Gateway
+
+// Routing
+
+• Routers are devices that transfer packets between different
+networks
+- IP network uses the Net ID portion of the IP address to identify the specific
+Network
+
+• Having no routers would be like having no Post Offices.
+- There would only be only 1 zip code for the entire network
+- All systems would be in the same Broadcast Domain
+- So, broadcast protocols like ARP would go to all systems
+
+Routers inspect the Layer 3 header of packets
+• Makes decisions based on the IP network address information in
+the packet
+
+• Switching is Layer 2
+- Look at Layer 2 headers and monitor the MAC address
+- Switches keep track of MAC addresses and the ports they are on
+- Will forward packets to the appropriate port based on MAC
+
+• Routing is Layer 3
+- Builds table of Network IDs and the IP of the next router in that direction
+- Inspects packets for NetID of IP address and forwards to next router on the way
+- Does not need to know the whole path- just next router!
+
+• At a minimum, router tables need to have:
+- Network Address: The address of a network
+- Subnet Mask: The subnet mask for that network – so it knows how many bits
+are in the Net ID
+- Next Hop: IP address of a neighboring router it can send the packet it to to
+reach the network
+- Interface: Which of the routers own physical interfaces it can send the packet
+out of to reach the Next Hop
+
+
+• May also contain other data like distance (how many hops to the
+network) and preference if there are more than one entries for same
+route
+
+Default Route –
+or Gateway of Last Resort
+• Routers can also add a “Default Route” to their table
+• This route will be used by default if the destination network is not
+in the table
+• This is commonly used to send all Internet traffic to ISP
+• That way, routers on a network like Champlain only need to know
+the internal Champlain network addresses
+• All other network can be sent to the ISP
+
+How are Routing Tables Built
+• Direct Connection: Automatically added to table
+• Static:
+- Network admins can type them into the router configuration
+- e.g.: ip route 192.168.4.0 255.255.255.0 192.168.3.2 FA0/1
+- Does not scale well – Imagine having to do that for 100’s of networks on
+dozens of routers!
+• Dynamic:
+- Use protocols so that the routers can send routing table information to
+their neighbors! More on this later
