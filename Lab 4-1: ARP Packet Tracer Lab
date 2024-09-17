@@ -1,0 +1,8 @@
+In this lab we used packet tracer to set up a basic topology connecting 4 computers to a switch and sent pings to verify connection
+
+useful commands
+
+arp -a * to see the arp table and review to see if there are any entries
+
+command line interface
+show mac-address-table *  the table format for Mac Address and Port
