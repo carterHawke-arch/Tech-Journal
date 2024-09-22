@@ -1,0 +1,18 @@
+Set up a simple network with 2 networks and observed http packets using simulation mode
+
+I was stuck for a long time trying to figure out why the router was not connecting to the switches, I found out that it was because the ports on the router were turned off.
+
+Document the use of "Simulation Mode"
+
+simulation mode stops time and allows user to watch each step of a packet being sent across the network. 
+To navigate the steps there are buttons at the bottom of packet tracer that can move to the next step.
+On the right side of packet tracer there is a panel with more information about the steps the packets take that you can click on for information.
+
+Document how to save configurations on routers
+
+click on router > Config > GLOBAL settings > NVRAM > Save
+there are also options below for startup, and running configurations
+
+Enter useful Packet Tracer Tips/Tricks you pick up
+Turn on router ports
+click on router > Config > INTERFACE > Port Status > On
