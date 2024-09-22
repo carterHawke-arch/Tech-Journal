@@ -1,1 +1,22 @@
+>>> Lab 4-2 - Simple Routing
 
+Observed a simple network to learn about the default gateway.
+
+did not run into any problems
+
+>> How do you set the gateway address on a workstation in Packet Tracer?
+
+Click on the workstation > Config > GLOBAL settings > Default gateway (for IPv4, or IPv6)
+
+>> How do you set the IP and subnet mask on different interfaces of a multilayer switch?
+
+Click on multilayer switch > Config > INTERFACE > FastEthernet0/1(0/2, 0/3, whichever port the interfaces are assigned to)
+
+>> How do you enter simulation mode in Packet Tracer?
+
+Bottom right of cisco packet tracer, click the simulation button
+
+>> How do you set which types of packets you want to see in Simulation Mode?
+
+Directly above the simulation button there are two buttons that are used to edit the filters 
+for what packets are being shown.
