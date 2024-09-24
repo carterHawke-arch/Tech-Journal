@@ -1,0 +1,11 @@
+In this lab we created a network with 3 seperate networks, pinged across the network and used a sniffer to get information about the packets being sent.
+
+No troubleshooting needed.
+
+How did you connect to a router?
+we first turned off the router to add ports so there were enough connections for the devices we will be connecting. then we used copper straight through wire to connect
+devices to a switch, and a copper straight through wire to connect the switch to the router. for the devices that were connected directly to the router, we used copper 
+cross through wire.
+
+note
+192.168 is a class C address and uses /24 or 255.255.255.0 subnet mask
