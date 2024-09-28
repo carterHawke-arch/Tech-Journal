@@ -1,0 +1,10 @@
+In this lab we used wireshark to observe a ping to the default gateway
+
+usefull commands:
+ping ip_address
+
+A MAC address is made up of 12 hexadecimal characters ex.
+a1:b2:c3:d4:e5:f6
+
+the first 6 digits are used to identify the vendor of the device
+the last 6 digits are unique to the device
