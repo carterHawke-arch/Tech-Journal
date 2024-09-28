@@ -1,0 +1,6 @@
+In this lab we registered for a cisco account in order to use packet tracer to set up a simple environment and ping a computer
+
+usefull tips:
+click on a pc to access controls like the Config and Desktop to access the command prompt interface
+all devices can be found in the bottom left of packet tracer. to deploy them, simply drag and drop.
+to connect devices with wire, click on the lightning bolt on the bottom left, clisk on a wire to select it and then click on a device to connect the wire to a port
