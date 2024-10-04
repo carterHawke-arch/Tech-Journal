@@ -250,3 +250,8 @@ dozens of routers!
 • Dynamic:
 - Use protocols so that the routers can send routing table information to
 their neighbors! More on this later
+
+
+How to find number of hosts in a subnet
+2 ^ N - 2
+
