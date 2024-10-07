@@ -1,0 +1,27 @@
+Summary
+Set up a network with 3 routers, 2 workstations per router connected with switches, configure serial ports, 
+configure rip, and send pings to computers connected to different routers.
+
+CLI commands
+set router ip and subnet mask:
+#interface GigabitEthernet0/0/0
+#ip address 192.168.1.33 255.255.255.224
+
+Turn on router interface
+#no shutdown
+
+RIP needs to advertize the network
+example, 192.168.1.0
+
+In CLI this looks like:
+#router rip
+#network 192.168.1.0
+
+Serial port config:
+in serial interface, set ip to next usable address, set clock speed to 64000 and turn on the port
+
+In CLI this looks like:
+#interface Serial0/1/0
+#ip address 192.168.1.97 255.255.255.224
+
+I had no difficulties with this lab
