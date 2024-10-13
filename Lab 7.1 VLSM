@@ -1,2 +1,7 @@
+In this lab we translated a subnetting table to a network in packet tracer
+
 Troubleshooting:
-when I try to enter those values into the router it tells me that /21 is a bad mask for 172.16.7.255.
+when I try to enter broadcast ip values into the router it tells me that /21 is a bad mask for 172.16.7.255.
+i learned that i should not be using broadcast addresses for default gateways, instead i should use a host IP
+
+setting the default gateway and ip adresses of the serial connections gave me the most trouble
