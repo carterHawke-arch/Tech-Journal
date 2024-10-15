@@ -1,0 +1,27 @@
+2^nth - 2 subnet addresses
+
+All zeros +1
+All ones -1 defines ip addresses
+
+1 - 254
+
+Broadcast 255
+
+Mac is layer 2 
+IP is layer 3
+
+Subnet mask 
+
+0 and 0 = 0
+1 and 0 = 0
+0 and 1 = 0
+1 and 1 = 1
+
+Cidr Notation or / notation
+The address is followed by a number that represents the number of bits
+
+192.168.19.2/24
+
+Private ranges are not routable on Internet
+Reserved ranges
+127.0.0.0/8 loop back
