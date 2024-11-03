@@ -1,4 +1,3 @@
-/// Module 1
 // How do networks work?
 Similar to postal mail service
 
@@ -254,6 +253,145 @@ their neighbors! More on this later
 
 How to find number of hosts in a subnet
 2 ^ N - 2
+
+// Subnetting
+
+2^nth - 2 subnet addresses
+
+All zeros +1
+All ones -1 defines ip addresses
+
+1 - 254
+
+Broadcast 255
+
+Mac is layer 2 
+IP is layer 3
+
+Subnet mask 
+
+0 and 0 = 0
+1 and 0 = 0
+0 and 1 = 0
+1 and 1 = 1
+
+Cidr Notation or / notation
+The address is followed by a number that represents the number of bits
+
+192.168.19.2/24
+
+Private ranges are not routable on Internet
+Reserved ranges
+127.0.0.0/8 loop back
+
+
+// More Subnetting
+
+• Valid ranges for Host IP’s on a subnet are determined by:
+- Cannot be all 0’s in Host ID (refers to network itself)
+- Cannot be all 1’s in Host ID (broadcast address)
+• Let’s look at the ranges for the example...
+
+So, can a /23 subnet mask ever have an odd number in the
+Network address?
+o NO! Because that will always mean there is a “1” in the Host ID!
+
+VLSM Tables – Knowing the Increments
+• As we see with /23, there are certain patterns that can help us
+figure out network addresses:
+• /23 – 3rd octet increment of 2 (always even)
+• /22 – 3rd octet increment of 4 (always multiple of 4)
+• /21 – 3rd octet increment of 8 (always multiple of 8)
+
+Private IP’s and Modern Networks
+• IPv4 “exhaustion”
+- All IPv4 addresses have been assigned by IANA
+- Most organizations have their own limited Public IP addresses, or get some from
+their ISP
+- Organizations typically have more systems than public IP’s – So…
+
+• Must use Private IP Ranges for internal systems
+- 10.0.0.0/8
+- 172.16.0.0/12
+- 192.168.0.0/24
+• Private IP ranges are not routable on the Internet
+
+Champlain Example
+Again, Champlain has 216.93.144.0/20
+• Those IP’s are used on some subnets
+• But lab subnets use 192.168.0.0/24 (like Skiff and Foster)
+• Wireless and some other subnets use 172.16.0.0 networks
+• NAT (Network Address Translation) is used to “map” private to public
+IP’s in an efficient manner
+- More on NAT in future class!
+
+• An organization is using the 172.16.0.0 private address space
+• How would you design the network for the 5 subnets?
+
+1. What subnet mask for each?
+Start with largest first
+Central /22 172.16.4.0    
+East /23      172.16.8.0   
+West /22     172.16.10.0 
+East lab /26 172.16.12.0
+West lab /26 172.16.12.64
+
+2. Determine network addresses
+- TIP: Start with the largest first
+
+3. Determine the host ranges
+
+West     172.16.10.1 - 172.16.11.254
+East      172.16.8.1 - 172.16.9.254
+Central 172.16.4.1 - 172.16.7.354
+
+// Static Routing
+
+How to configure static routing in CLI #ip route [network address] [subnet mask] [next hop]
+
+
+• Routers are devices that transfer packets between different
+networks
+  IP network uses the Net ID portion of the IP address to identify the specific
+network
+• Having no routers would be like having no Post Offices.
+  There would only be only 1 zip code for the entire network
+  All systems would be in the same Broadcast Domain
+  So, broadcast protocols like ARP would go to all systems
+
+• Switching is Layer 2
+  Look at Layer 2 headers and monitor the MAC address
+  Switches keep track of MAC addresses and the ports they are on
+  Will forward packets to the appropriate port based on MAC
+• Routing is Layer 3
+  Builds table of Network IDs and the IP of the next router in that direction
+  Inspects packets for NetID of IP address and forwards to next router on the way
+  Does not need to know the whole path- just next router!
+
+Routing Tables
+• At a minimum, router tables need to have:
+  Network Address: The address of a network
+  Subnet Mask: The subnet mask for that network – so it knows how many bits
+are in the Net ID
+  Next Hop: IP address of a neighboring router it can send the packet it to to
+reach the network
+  Interface: Which of the routers own physical interfaces it can send the packet
+out of to reach the Next Hop
+• May also contain other data like distance (how many hops to the
+network) and preference if there are more than one entries for same
+route
+
+How are Routing Tables Built
+• Static:
+  Network admins can type them into the router configuration
+  e.g.: ip route 192.168.4.0 255.255.255.0 192.168.3.2 FA0/1
+  Does not scale well – Imagine having to do that for 100’s of networks on
+dozens of routers!
+
+• Dynamic:
+  Use protocols so that the routers can send routing table information to
+their neighbors
+
 
 // Dynamic Routing
 
