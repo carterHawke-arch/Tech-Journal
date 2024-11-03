@@ -255,3 +255,105 @@ their neighbors! More on this later
 How to find number of hosts in a subnet
 2 ^ N - 2
 
+// Dynamic Routing
+
+Routing Tables
+• At a minimum, router tables need to have:
+- Network Address: The address of a network
+- Subnet Mask: The subnet mask for that network – so it knows how many bits
+are in the Net ID
+- Next Hop: IP address of a neighboring router it can send the packet it to to
+reach the network
+- Interface: Which of the routers own physical interfaces it can send the packet
+out of to reach the Next Hop
+• May also contain other data like distance (how many hops to the
+network) and preference if there are more than one entries for same
+route
+
+How are Routing Tables Built
+• Static:
+- Network admins can type them into the router configuration
+- e.g.: ip route 192.168.4.0 255.255.255.0 192.168.3.2 FA0/1
+- Does not scale well – Imagine having to do that for 100’s of networks on
+dozens of routers!
+
+• Dynamic:
+- Use protocols so that the routers can send routing table information to
+their neighbors
+
+Routing Protocols allow
+routers to “talk” to each other
+• Dynamic/automatic creation of
+tables
+
+Routing Protocols
+• Routing protocols are just that – protocols!
+• Routers use the protocols to send info (packets) to one another
+about networks and how to access them
+• Routers use the info to build their routing tables
+
+Routing Protocols
+• Routers use “routing protocols” to exchange routing information
+with each other
+- IGP is used to refer to the process running on routers inside an
+organization’s network
+- EGP is used to refer to the process running between routers bordering
+directly connected ISP networks
+
+
+What Is an IGP?
+• Interior Gateway Protocol
+• Within an Organization
+• Carries information about internal infrastructure prefixes
+• Widely used IGPs:
+- RIPv2
+- OSPF
+- ISIS
+
+What Is an EGP?
+• Exterior Gateway Protocol
+• Used to convey routing information between Organizations
+• De-coupled from the IGP
+• Current widely-use EGP is BGP (Border Gateway Protocol)
+
+Why Do We Need an EGP?
+• Scaling to large network
+- Hierarchy
+- Limit scope of failure
+• Define Administrative Boundary
+• Policy
+- Control reachability of prefixes
+- Merge separate organizations
+- Connect multiple IGPs
+
+Dynamic IGP Types
+Distance Vector- Like RIP v2!
+• Routers send out broadcasts/multicasts with their routing table
+• Other routers listen, and update their tables accordingly
+• Typically send tables every 30-60 seconds
+• Routing preference is based solely on Hops (how many routers between
+networks)
+• Very easy to configure – great for simple/smaller networks – but...
+• Noisy (lot’s of broadcasts), slow to converge, does not scale to large or
+complex networks
+
+Configuring RIPv2
+On Cisco Routers, configuring RIPv2 is pretty simple:
+1. Enable RIP by using the router rip global config command
+- R1(config)# router rip
+2. Instruct the router to use RIPv2 with the version 2 command
+- R1(config-router)# version 2
+3. Telling RIP which connected networks to advertise by using one
+or more network commands.
+- R1(router-config)#network 192.168.3.0
+- R1(router-config)#network 192.168.1.0
+
+Link State IGP
+Alternative to Distance Vector protocols like RIP
+• More popular method for IGP
+• Routers figure out who their neighbors
+• After initial convergence – only send Hello’s (keep-alives) and Link State
+updates with changes
+• Uses more advanced route-selection metrics (notably – bandwidth)
+• Open Shortest Path First (OSPF) is most popular IGP
+• You will cover OSPF more in future classes!
