@@ -1,1 +1,18 @@
+In this packet tracer lab we were given a disconnected network with three floors and were tasked with creating three seperate VLANs to seperate network traffic into these three channels
 
+I did not need any troubleshooting for this lab
+
+Entry for creating VLANs on a switch
+VLAN database, add VLAN
+Name VLAN can be anything
+Number has to be connected to the name and stay the same across switches
+
+Entry for configuring an interface as an Access port
+Select port such as fastEthernet0/1
+Select VLAN dropdown
+Select desired VLAN
+
+Entry for configuring an interface as a Trunk port
+Select port such as GigabitEthernet0/1
+Change Access to Trunk
+Select VLAN dropdown and select all of the VLANs you would like to come through the port
