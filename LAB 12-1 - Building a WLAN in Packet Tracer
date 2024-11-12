@@ -1,0 +1,16 @@
+in this lab we explored how to set up and connect to a wireless network in packet tracer.
+I did not need to do any troubleshooting.
+
+Entry for configuring a wireless router's network
+Click on the router and head to the GUI tab
+connection type set to static
+enter internet Ip address, subnet mask, and default gateway (no default gateway in this lab)
+enter router IP address, subnet mask, and DHCP settings under Network Setup
+scroll up and find wireless settings - set network mode, SSID, and channel here
+find wireless security next to basic wireless settings - set security mode and passphrase here
+Save settings at the bottom
+
+Entry for configuring a wireless connection on a laptop
+click on laptop > Desktop > PC Wireless
+under profiles you can create a new profile for the laptop and you will be prompted to select a wireless network to connect to
+under link information you can view the signal strength and link quality
